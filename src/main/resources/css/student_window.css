@@ -1,0 +1,19 @@
+#student_window_image{
+    -fx-image: url("/image/student_window.png");
+}
+
+.root{
+    -fx-background-image: url("/image/student_background.jpg");
+}
+
+#tree_view_1{
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+
+#tree_view_2{
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+
+#tree_view_3{
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}

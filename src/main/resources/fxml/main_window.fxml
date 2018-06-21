@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.lwolvej.lessonselectionsystem.controller.MainWindowController">
+    <children>
+        <JFXTextField fx:id="textField" layoutX="373.0" layoutY="55.0" prefHeight="30.0" prefWidth="200.0">
+            <validators>
+                <RequiredFieldValidator message="Input required!">
+                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                </RequiredFieldValidator>
+            </validators>
+        </JFXTextField>
+        <Label layoutX="373.0" layoutY="98.0" prefHeight="36.0" prefWidth="200.0" text="密码:">
+            <font>
+                <Font name="Andale Mono" size="15.0"/>
+            </font>
+        </Label>
+        <JFXPasswordField fx:id="passwordField" layoutX="373.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0">
+            <validators>
+                <RequiredFieldValidator message="Input required!">
+                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                </RequiredFieldValidator>
+            </validators>
+        </JFXPasswordField>
+        <Label layoutX="373.0" layoutY="22.0" prefHeight="36.0" prefWidth="200.0" text="用户账号:">
+            <font>
+                <Font name="Andale Mono" size="15.0"/>
+            </font>
+        </Label>
+        <ImageView id="customImageView" fitHeight="250.0" fitWidth="320.0" layoutX="25.0" layoutY="30.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+            <!--<effect>-->
+            <!--<DropShadow />-->
+            <!--</effect>-->
+        </ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="305.0" prefHeight="70.0"
+               prefWidth="320.0" text="选课管理系统" textAlignment="CENTER" textFill="#061251" textOverrun="CLIP">
+            <font>
+                <Font name="Apple Color Emoji" size="36.0"/>
+            </font>
+        </Label>
+        <HBox alignment="CENTER" layoutX="361.0" layoutY="329.0" prefHeight="36.0" prefWidth="200.0">
+            <children>
+                <JFXButton fx:id="loginButton" onAction="#login" text="登录"/>
+            </children>
+        </HBox>
+
+        <JFXRadioButton fx:id="radioStudent" layoutX="373.0" layoutY="230.0" text="学生" userData="1"/>
+        <JFXRadioButton fx:id="radioTeacher" layoutX="373.0" layoutY="262.0" text="教师" userData="2"/>
+        <JFXRadioButton fx:id="radioOfficer" layoutX="373.0" layoutY="297.0" text="教务处" userData="3"/>
+        <Label layoutX="373.0" layoutY="193.0" text="角色:">
+            <font>
+                <Font name="Andale Mono" size="15.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="90.0" fx:id="roleImage" fitWidth="120.0" layoutX="469.0" layoutY="223.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+    </children>
+
+    <stylesheets>
+        <URL value="@/css/main_window.css"/>
+    </stylesheets>
+</AnchorPane>

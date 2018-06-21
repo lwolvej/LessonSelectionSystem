@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lwolvej.lessonselectionsystem.controller.TeacherController">
+    <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="460.0" prefWidth="300.0">
+            <children>
+                <ImageView fitHeight="120.0" fitWidth="180.0" layoutX="60.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                <JFXRippler layoutX="42.0" layoutY="155.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="70.0" text="教师号:" />
+                    </children>
+                </JFXRippler>
+                <JFXRippler layoutX="42.0" layoutY="235.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="224.0" prefHeight="30.0" prefWidth="70.0" text="办公室:" />
+                    </children>
+                </JFXRippler>
+                <JFXRippler layoutX="42.0" layoutY="275.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="260.0" prefHeight="30.0" prefWidth="70.0" text="联系方式:" />
+                    </children>
+                </JFXRippler>
+                <JFXRippler layoutX="42.0" layoutY="315.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="296.0" prefHeight="30.0" prefWidth="70.0" text="性别:" />
+                    </children>
+                </JFXRippler>
+                <JFXRippler layoutX="42.0" layoutY="355.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="332.0" prefHeight="30.0" prefWidth="70.0" text="所属学院:" />
+                    </children>
+                </JFXRippler>
+                <JFXRippler layoutX="42.0" layoutY="195.0" prefHeight="30.0" prefWidth="70.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="188.0" prefHeight="30.0" prefWidth="70.0" text="教师姓名:" />
+                    </children>
+                </JFXRippler>
+                <Label fx:id="teacherIdLabel" layoutX="150.0" layoutY="155.0" prefHeight="30.0" prefWidth="140.0" text="Label1" />
+                <Label fx:id="teacherNameLabel" layoutX="150.0" layoutY="195.0" prefHeight="30.0" prefWidth="140.0" text="Label2" />
+                <Label fx:id="teacherSiteLabel" layoutX="150.0" layoutY="235.0" prefHeight="30.0" prefWidth="140.0" text="Label3" />
+                <Label fx:id="teacherNumberLabel" layoutX="150.0" layoutY="275.0" prefHeight="30.0" prefWidth="140.0" text="Label4" />
+                <Label fx:id="teacherGenderLabel" layoutX="150.0" layoutY="315.0" prefHeight="30.0" prefWidth="140.0" text="Label5" />
+                <Label fx:id="teacherDepartmentLabel" layoutX="150.0" layoutY="355.0" prefHeight="30.0" prefWidth="140.0" text="Label6" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="486.0" prefHeight="100.0" prefWidth="300.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                    <children>
+                        <JFXButton onAction="#quit" text="退出登录" />
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+        <Pane layoutX="314.0" layoutY="14.0" prefHeight="570.0" prefWidth="580.0">
+            <children>
+                <JFXTabPane layoutX="2.0" layoutY="2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="563.0" prefWidth="574.0">
+                    <tabs>
+                        <Tab text="课程总览">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <JFXTreeTableView fx:id="treeView1" layoutX="14.0" layoutY="64.0" prefHeight="453.0" prefWidth="544.0">
+                                            <columns>
+                                                <JFXTreeTableColumn fx:id="treeColumn11" prefWidth="75.0" text="课程号" />
+                                                <JFXTreeTableColumn fx:id="treeColumn12" prefWidth="75.0" text="课程名称" />
+                                                <JFXTreeTableColumn fx:id="treeColumn13" prefWidth="75.0" text="上课地点" />
+                                                <JFXTreeTableColumn fx:id="treeColumn14" prefWidth="75.0" text="上课时间" />
+                                                <JFXTreeTableColumn fx:id="treeColumn15" prefWidth="75.0" text="年级" />
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                            </columnResizePolicy>
+                                        </JFXTreeTableView>
+                                        <Label layoutX="26.0" layoutY="27.0" text="检索">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField fx:id="searchField1" layoutX="77.0" layoutY="25.0" />
+                                        <HBox alignment="CENTER" layoutX="465.0" layoutY="16.0" prefHeight="45.0" prefWidth="93.0">
+                                            <children>
+                                                <JFXButton onAction="#refresh1" text="刷新" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="学生名单">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <JFXRippler layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0">
+                                            <children>
+                                                <Label text="输入查询的课程号:">
+                                                    <font>
+                                                        <Font size="21.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </JFXRippler>
+                                        <JFXTextField fx:id="lessonField1" layoutX="30.0" layoutY="64.0" prefHeight="27.0" prefWidth="62.0" />
+                                        <HBox alignment="CENTER" layoutX="114.0" layoutY="59.0" prefHeight="38.0" prefWidth="86.0">
+                                            <children>
+                                                <JFXButton fx:id="searchLessonButton" onAction="#searchScore" text="查询" />
+                                            </children>
+                                        </HBox>
+                                        <JFXListView fx:id="scoreListView" layoutX="287.0" layoutY="14.0" prefHeight="499.0" prefWidth="273.0" />
+                                        <Label layoutX="22.0" layoutY="168.0" text="课程名称:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXRippler layoutX="172.0" layoutY="168.0">
+                                            <children>
+                                                <Label fx:id="lessonNameLabel" text="Label7">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </JFXRippler>
+                                        <JFXRippler layoutX="172.0" layoutY="241.0" />
+                                        <JFXRippler layoutX="172.0" layoutY="314.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="新增课程">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="105.0" layoutY="36.0" text="上课时间:">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="105.0" layoutY="136.0" text="上课地点:">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="105.0" layoutY="236.0" text="年级:">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="105.0" layoutY="336.0" text="课程名称:">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER" layoutX="187.0" layoutY="425.0" prefHeight="57.0" prefWidth="200.0">
+                                            <children>
+                                                <JFXButton fx:id="addLessonButton" buttonType="RAISED" onAction="#addNewLesson" ripplerFill="#4122a8" text="添加" textFill="#252417">
+                                                    <font>
+                                                        <Font size="27.0" />
+                                                    </font>
+                                                </JFXButton>
+                                            </children>
+                                        </HBox>
+                                        <JFXComboBox fx:id="timeComBox" layoutX="294.0" layoutY="37.0" prefHeight="27.0" prefWidth="150.0" />
+                                        <JFXComboBox fx:id="roomComBox" layoutX="294.0" layoutY="137.0" prefHeight="27.0" prefWidth="150.0" />
+                                        <JFXComboBox fx:id="gradeComBox" layoutX="294.0" layoutY="237.0" prefHeight="27.0" prefWidth="150.0" />
+                                        <JFXTextField fx:id="lessonNameField" layoutX="294.0" layoutY="337.0" prefHeight="27.0" prefWidth="150.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="删除课程">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="192.0" layoutY="96.0" text="输入需要删除的课程号:">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField fx:id="lessonDeleteField" layoutX="191.0" layoutY="175.0" prefHeight="27.0" prefWidth="208.0" />
+                                        <HBox alignment="CENTER" layoutX="187.0" layoutY="243.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <JFXButton fx:id="deleteLessonButton" text="删除" onAction="#deleteLesson">
+                                                    <font>
+                                                        <Font size="24.0" />
+                                                    </font>
+                                                </JFXButton>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="修改成绩">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <JFXRippler layoutX="33.0" layoutY="44.0" prefHeight="40.0" prefWidth="200.0">
+                                            <children>
+                                                <Label text="输入需要修改成绩的学生学号">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </JFXRippler>
+                                        <JFXTextField layoutX="265.0" layoutY="51.0" />
+                                        <HBox alignment="CENTER" layoutX="420.0" layoutY="44.0" prefHeight="40.0" prefWidth="140.0">
+                                            <children>
+                                                <JFXButton text="查询" />
+                                            </children>
+                                        </HBox>
+                                        <JFXListView layoutX="33.0" layoutY="95.0" prefHeight="400.0" prefWidth="291.0" />
+                                        <Label layoutX="341.0" layoutY="95.0" text="修改课程的课程号:">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField layoutX="341.0" layoutY="150.0" prefHeight="27.0" prefWidth="173.0" />
+                                        <Label layoutX="341.0" layoutY="257.0" text="修改之后的分数:">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField layoutX="339.0" layoutY="303.0" prefHeight="27.0" prefWidth="173.0" />
+                                        <HBox alignment="CENTER" layoutX="341.0" layoutY="395.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <JFXButton text="修改" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="录入成绩">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="105.0" layoutY="181.0" text="学生号:">
+                                            <font>
+                                                <Font size="39.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="105.0" layoutY="41.0" text="课程号:">
+                                            <font>
+                                                <Font size="39.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="123.0" layoutY="320.0" text="成绩:">
+                                            <font>
+                                                <Font size="40.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXComboBox fx:id="lessonIdComBox" layoutX="365.0" layoutY="65.0" prefHeight="27.0" prefWidth="152.0" />
+                                        <JFXComboBox fx:id="studentIdComBox" layoutX="365.0" layoutY="191.0" prefHeight="27.0" prefWidth="152.0" />
+                                        <JFXTextField fx:id="studentLessonScore" layoutX="366.0" layoutY="332.0" />
+                                        <HBox alignment="CENTER" layoutX="187.0" layoutY="399.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <JFXButton fx:id="addScoreButton" buttonType="RAISED" text="确认" onAction="#addScore">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </JFXButton>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </children>
+        </Pane>
+    </children>
+
+    <stylesheets>
+        <URL value="@/css/teacher_window.css" />
+    </stylesheets>
+</AnchorPane>
