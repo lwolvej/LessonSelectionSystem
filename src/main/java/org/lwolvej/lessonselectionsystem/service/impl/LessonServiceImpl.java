@@ -12,7 +12,6 @@ import org.lwolvej.lessonselectionsystem.service.LessonService;
 import org.lwolvej.lessonselectionsystem.factory.Factory;
 import org.lwolvej.lessonselectionsystem.util.ObjectUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -202,25 +201,44 @@ public class LessonServiceImpl implements LessonService {
                         index = false;
                     }
                 }
-                //获取旧集合
+                //map是新集合中判断后没有课程冲突的hashMap
+                //获取这个学生已近选过的课程也就是，旧集合
                 List<Score> scoreList = scoreDao.selectScoreByStudentId(newId);
+                System.out.println(scoreList);
                 //if有旧课程,else没有
                 if (scoreList != null && scoreList.size() != 0) {
                     //最终插入的集合
-                    List<Long> list = new ArrayList<>();
+                    List<Long> list = Lists.newArrayList();
                     //开始和旧的数据进行判断
-                    for (Score src : scoreList) {
-                        Manage manage = manageDao.selectByLessonId(src.getLesson().getLessonId());
-                        //if map中有, else map中没有
-                        if (manageMap.containsKey(manage.getClock().getClockId())) {
+//                    for (Score src : scoreList) {
+//                        Manage manage = manageDao.selectByLessonId(src.getLesson().getLessonId());
+//                        //if map中有, else map中没有
+//                        if (manageMap.containsKey(manage.getClock().getClockId())) {
+//                            index = false;
+//                        } else {
+//                            //获取所有新集合中符合规范的课程id
+//                            list.add(manageMap.get(manage.getClock().getClockId()).getLesson().getLessonId());
+//                        }
+
+//                    }
+                    Map<Long, Long> oldVar = Maps.newHashMap();
+                    scoreList.forEach(obj -> {
+                        Manage manage = manageDao.selectByLessonId(obj.getLesson().getLessonId());
+                        oldVar.put(manage.getClock().getClockId(), manage.getLesson().getLessonId());
+                    });
+
+                    for (Map.Entry<Long, Manage> entry : manageMap.entrySet()) {
+                        if (oldVar.containsKey(entry.getKey())) {
                             index = false;
                         } else {
-                            list.add(manage.getLesson().getLessonId());
+                            System.out.println(entry.getKey() + " " + entry.getValue());
+                            list.add(entry.getValue().getLesson().getLessonId());
                         }
                     }
+                    //开始插入
                     list.forEach(o -> scoreDao.insertScore(-1, newId, o));
                 } else {
-                    manageMap.forEach((key, value) -> scoreDao.insertScore(-1, newId, key));
+                    manageMap.forEach((key, value) -> scoreDao.insertScore(-1, newId, value.getLesson().getLessonId()));
                 }
                 //有课程冲突返回false，没有则返回true
                 return index;

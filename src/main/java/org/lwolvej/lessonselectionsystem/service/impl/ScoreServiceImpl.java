@@ -82,7 +82,7 @@ public class ScoreServiceImpl implements ScoreService {
                 if (lesson != null) {
                     Integer number = ObjectUtil.StringToInteger(obj.getScoreNumber());
                     Long studentId = ObjectUtil.StringToLong(obj.getStudentId());
-                    return scoreDao.insertScore(number, studentId, lessonId);
+                    return scoreDao.updateScore(number, studentId, lessonId);
                 } else {
                     return false;
                 }

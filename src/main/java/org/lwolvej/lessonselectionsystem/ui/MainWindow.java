@@ -45,6 +45,7 @@ public class MainWindow extends Application {
             StudentController controller = fxmlLoader.getController();
             controller.setMainWindow(this);
             controller.setStudent(student);
+            controller.setStage(mainStage);
 
             controller.initStudent();
             controller.initTimeTable();
@@ -96,6 +97,7 @@ public class MainWindow extends Application {
             controller.initGradeList();
             controller.initRoomList();
             controller.initTimeList();
+            controller.initLessonIdList();
 
             Scene scene = new Scene(root, 900, 600);
             mainStage.setScene(scene);

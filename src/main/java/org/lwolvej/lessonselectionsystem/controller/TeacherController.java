@@ -130,6 +130,20 @@ public class TeacherController implements Initializable {
     @FXML
     private JFXButton addScoreButton;
 
+    //第五个tab
+    @FXML
+    private JFXTextField studentIdNeedToChangeScore;
+    @FXML
+    private JFXButton searchStudentButton;
+    @FXML
+    private JFXListView<Label> studentListView;
+    @FXML
+    private JFXTextField lessonNeedToChange;
+    @FXML
+    private JFXTextField lessonNumberChange;
+    @FXML
+    private JFXButton changeLessonButton;
+
 
     private Teacher teacher;
 
@@ -148,6 +162,16 @@ public class TeacherController implements Initializable {
     private String lessonSelectId;
 
     private String studentSelectId;
+
+    private Student studentChangeScore;
+
+    public Student getStudentChangeScore() {
+        return studentChangeScore;
+    }
+
+    public void setStudentChangeScore(Student studentChangeScore) {
+        this.studentChangeScore = studentChangeScore;
+    }
 
     public String getStudentSelectId() {
         return studentSelectId;
@@ -243,7 +267,7 @@ public class TeacherController implements Initializable {
         roomComBox.setOnAction(e -> roomId = roomComBox.getSelectionModel().getSelectedItem().split(":")[0]);
         gradeComBox.setOnAction(e -> gradeId = gradeComBox.getSelectionModel().getSelectedItem().split(":")[0]);
 
-        lessonIdComBox.setOnAction(e -> lessonSelectId = lessonIdComBox.getSelectionModel().getSelectedItem());
+        lessonIdComBox.setOnAction(e -> {lessonSelectId = lessonIdComBox.getSelectionModel().getSelectedItem(); initStudentIdList();});
         studentIdComBox.setOnAction(e -> studentSelectId = studentIdComBox.getSelectionModel().getSelectedItem());
     }
 
@@ -303,7 +327,10 @@ public class TeacherController implements Initializable {
     }
 
     public void initLessonIdList() {
-        manageService.queryTeacherLesson(teacher.getTeacherId().toString()).forEach(obj -> lessonIdComBox.getItems().add(obj.getLessonId().toString()));
+        List<ManageDTO> manages = manageService.queryTeacherLesson(teacher.getTeacherId().toString());
+        if(manages != null && manages.size() != 0) {
+            manages.forEach(obj -> lessonIdComBox.getItems().add(obj.getLessonId().toString()));
+        }
     }
 
     private void initStudentIdList() {
@@ -341,7 +368,7 @@ public class TeacherController implements Initializable {
     @FXML
     protected void addNewLesson() {
         String lessonName = lessonNameField.getText().trim();
-        if (roomId != null && gradeId != null && timeId != null && lessonName != null) {
+        if (roomId != null && gradeId != null && timeId != null && !("".equals(lessonName.trim()))) {
             LessonDTO dto = new LessonDTO();
             dto.setLessonName(lessonName);
             dto.setRoomId(Long.parseLong(roomId.trim()));
@@ -374,7 +401,6 @@ public class TeacherController implements Initializable {
             new DialogWindow().display("没有输入信息", deleteLessonButton);
         }
     }
-
     //录入成绩
     @FXML
     protected void addScore() {
@@ -388,12 +414,52 @@ public class TeacherController implements Initializable {
             data.add(dto);
             Boolean l = scoreService.addScore(data);
             if (l) {
-                new DialogWindow().display("插入成功", addLessonButton);
+                new DialogWindow().display("插入成功", addScoreButton);
             } else {
-                new DialogWindow().display("插入失败", addLessonButton);
+                new DialogWindow().display("插入失败", addScoreButton);
             }
         } else {
-            new DialogWindow().display("信息不完全", addLessonButton);
+            new DialogWindow().display("信息不完全", addScoreButton);
+        }
+    }
+    //查找学生以及其所有学科成绩
+    @FXML
+    protected void searchStudent() {
+        String id = studentIdNeedToChangeScore.getText();
+        if(id != null && !id.equals("")) {
+            List<Score> scores = scoreService.queryScoreByStudent(id);
+            if(scores != null && scores.size() != 0) {
+                studentChangeScore = scores.get(0).getStudent();
+                scores.forEach(obj -> {
+                    Label label = new Label(obj.getStudent().getStudentName() + " " + obj.getLesson().getLessonName() + " " + obj.getScoreNumber());
+                    studentListView.getItems().add(label);
+                });
+            }else{
+                new DialogWindow().display("", searchLessonButton);
+            }
+        }else{
+            new DialogWindow().display("信息不正确", searchStudentButton);
+        }
+    }
+    //修改成绩
+    @FXML
+    protected void changeLesson() {
+        String id = lessonNeedToChange.getText();
+        String number = lessonNumberChange.getText();
+        if(!number.equals("") && number != null
+                && id != null && !id.equals("")){
+            ScoreDTO dto = new ScoreDTO();
+            dto.setLessonId(id);
+            dto.setStudentId(studentChangeScore.getStudentId().toString());
+            dto.setScoreNumber(number);
+            Boolean l = scoreService.changeScore(dto);
+            if(l) {
+                new DialogWindow().display("修改成功", changeLessonButton);
+            }else{
+                new DialogWindow().display("修改失败", changeLessonButton);
+            }
+        }else{
+            new DialogWindow().display("信息不完整", changeLessonButton);
         }
     }
 

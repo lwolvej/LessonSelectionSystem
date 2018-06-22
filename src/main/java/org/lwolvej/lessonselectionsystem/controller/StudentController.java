@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TreeTableColumn;
+import javafx.stage.Stage;
 import org.lwolvej.lessonselectionsystem.dto.AnalyseDTO;
 import org.lwolvej.lessonselectionsystem.dto.ManageDTO;
 import org.lwolvej.lessonselectionsystem.dto.TimeTableDTO;
@@ -26,7 +27,6 @@ import org.lwolvej.lessonselectionsystem.service.ScoreService;
 import org.lwolvej.lessonselectionsystem.ui.DialogWindow;
 import org.lwolvej.lessonselectionsystem.ui.MainWindow;
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -36,6 +36,16 @@ public class StudentController implements Initializable {
     /****引入界面*****/
 
     private MainWindow mainWindow;
+
+    private Stage stage;
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     public MainWindow getMainWindow() {
         return mainWindow;
@@ -315,8 +325,13 @@ public class StudentController implements Initializable {
         String id = textField3.getText();
         if (id != null) {
             List<AnalyseDTO> dtos = scoreService.queryScoreAnalysis(id);
-            String arr = "最高分:" + dtos.get(0).getData() + ";最低分:" + dtos.get(1).getData() + ";平均分:" + dtos.get(2).getData();
-            new DialogWindow().display(arr, buttonFor);
+            if(dtos != null && dtos.size() != 0) {
+                String arr = "最高分:" + dtos.get(0).getData() + ";最低分:" + dtos.get(1).getData() + ";平均分:" + dtos.get(2).getData();
+                new DialogWindow().display(arr, buttonFor);
+            }else{
+                new DialogWindow().display("输入信息不正确", buttonFor);
+                textField3.setText("");
+            }
         } else {
             new DialogWindow().display("信息没有输入", buttonFor);
         }
@@ -360,6 +375,9 @@ public class StudentController implements Initializable {
     protected void refresh3() {
         initSelectLesson();
     }
+
+    @FXML
+    protected void quit(){mainWindow.start(stage);}
 
 
     /****按钮功能设置*****/

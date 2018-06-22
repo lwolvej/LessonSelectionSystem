@@ -5,6 +5,78 @@
 .root{
     -fx-background-image: url("/image/student_background.jpg");
 }
+#label1{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+    -fx-background-radius: 2px;
+}
+#label2{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+
+#label3{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label4{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label5{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label6{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label7{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label8{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label9{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label10{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label11{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label12{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label13{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label14{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label15{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+#label16{
+    -fx-background-color: #e0fcff;
+    -fx-text-fill: BLACK;
+}
+
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: #65bbff;
+    -fx-text-fill: white;
+}
 
 #tree_view_1{
     -fx-background-color: rgba(0, 0, 0, 0.05);
@@ -17,3 +89,4 @@
 #tree_view_3{
     -fx-background-color: rgba(0, 0, 0, 0.05);
 }
+

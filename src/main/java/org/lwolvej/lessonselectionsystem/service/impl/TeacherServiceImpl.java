@@ -30,9 +30,12 @@ public class TeacherServiceImpl implements TeacherService {
             String newPwd = ObjectUtil.stringCheck(teacherPwd);
             if (newPwd != null) {
                 Teacher teacher = teacherDao.selectTeacherById(newId);
-                //判断密码是否正确
-                if (MD5Util.checkPassword(newPwd, teacher.getTeacherPwd().trim())) {
-                    return teacher;
+                //判断教师是否为空
+                if(teacher != null) {
+                    //判断密码是否正确
+                    if (MD5Util.checkPassword(newPwd, teacher.getTeacherPwd().trim())) {
+                        return teacher;
+                    }
                 }
             }
         }

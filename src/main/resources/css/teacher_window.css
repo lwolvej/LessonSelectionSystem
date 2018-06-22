@@ -1,0 +1,9 @@
+#teacher_window_image{
+    -fx-image: url("/image/teacher_window.jpg");
+}
+
+.jfx-button {
+    -jfx-button-type: FLAT;
+    -fx-background-color: #e2fff8;
+    -fx-text-fill: #0c2c39;
+}

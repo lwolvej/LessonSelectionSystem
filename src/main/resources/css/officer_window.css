@@ -1,0 +1,5 @@
+.jfx-button {
+    -jfx-button-type: FLAT;
+    -fx-background-color: #4fcbff;
+    -fx-text-fill: #0c2c39;
+}

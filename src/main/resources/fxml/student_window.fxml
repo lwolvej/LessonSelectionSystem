@@ -15,31 +15,32 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-            prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.lwolvej.lessonselectionsystem.controller.StudentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lwolvej.lessonselectionsystem.controller.StudentController">
     <children>
-        <Pane blendMode="DARKEN" cacheHint="QUALITY" depthTest="ENABLE" layoutX="8.0" layoutY="14.0" prefHeight="560.0"
-              prefWidth="320.0">
+        <Pane blendMode="DARKEN" cacheHint="QUALITY" depthTest="ENABLE" layoutX="8.0" layoutY="14.0" prefHeight="560.0" prefWidth="320.0">
             <children>
-                <Label layoutX="68.0" layoutY="220.0" prefHeight="40.0" prefWidth="72.0" text="学生姓名:"/>
-                <Label layoutX="68.0" layoutY="267.0" prefHeight="40.0" prefWidth="72.0" text="学生性别:"/>
-                <Label layoutX="68.0" layoutY="307.0" prefHeight="40.0" prefWidth="72.0" text="联系电话:"/>
-                <Label layoutX="68.0" layoutY="353.0" prefHeight="40.0" prefWidth="72.0" text="学院:"/>
-                <Label layoutX="68.0" layoutY="174.0" prefHeight="40.0" prefWidth="72.0" text="学生账号:"/>
-                <Label layoutX="68.0" layoutY="393.0" prefHeight="40.0" prefWidth="72.0" text="专业:"/>
-                <Label layoutX="68.0" layoutY="433.0" prefHeight="40.0" prefWidth="72.0" text="班级:"/>
-                <Label layoutX="68.0" layoutY="479.0" prefHeight="40.0" prefWidth="72.0" text="年级:"/>
-                <Label fx:id="label1" layoutX="194.0" layoutY="174.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label2" layoutX="194.0" layoutY="220.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label3" layoutX="194.0" layoutY="260.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label4" layoutX="194.0" layoutY="307.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label5" layoutX="194.0" layoutY="353.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label6" layoutX="194.0" layoutY="393.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label7" layoutX="194.0" layoutY="433.0" prefHeight="40.0" prefWidth="118.0"/>
-                <Label fx:id="label8" layoutX="194.0" layoutY="479.0" prefHeight="40.0" prefWidth="118.0"/>
-                <ImageView id="student_window_image" fitHeight="150.0" fitWidth="150.0" layoutX="85.0" layoutY="24.0"
-                           pickOnBounds="true" preserveRatio="true"/>
+                <Label id="label1" layoutX="68.0" layoutY="220.0" prefHeight="40.0" prefWidth="72.0" text="学生姓名:" />
+                <Label id="label2" layoutX="68.0" layoutY="267.0" prefHeight="40.0" prefWidth="72.0" text="学生性别:" />
+                <Label id="label3" layoutX="68.0" layoutY="307.0" prefHeight="40.0" prefWidth="72.0" text="联系电话:" />
+                <Label id="label4" layoutX="68.0" layoutY="353.0" prefHeight="40.0" prefWidth="72.0" text="学院:" />
+                <Label id="label5" layoutX="68.0" layoutY="174.0" prefHeight="40.0" prefWidth="72.0" text="学生账号:" />
+                <Label id="label6" layoutX="68.0" layoutY="393.0" prefHeight="40.0" prefWidth="72.0" text="专业:" />
+                <Label id="label7" layoutX="68.0" layoutY="433.0" prefHeight="40.0" prefWidth="72.0" text="班级:" />
+                <Label id="label8" layoutX="68.0" layoutY="479.0" prefHeight="40.0" prefWidth="72.0" text="年级:" />
+                <Label id="label9" fx:id="label1" layoutX="194.0" layoutY="174.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label10" fx:id="label2" layoutX="194.0" layoutY="220.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label11" fx:id="label3" layoutX="194.0" layoutY="260.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label12" fx:id="label4" layoutX="194.0" layoutY="307.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label13" fx:id="label5" layoutX="194.0" layoutY="353.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label14" fx:id="label6" layoutX="194.0" layoutY="393.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label15" fx:id="label7" layoutX="194.0" layoutY="433.0" prefHeight="40.0" prefWidth="118.0" />
+                <Label id="label16" fx:id="label8" layoutX="194.0" layoutY="479.0" prefHeight="40.0" prefWidth="118.0" />
+                <ImageView id="student_window_image" fitHeight="150.0" fitWidth="150.0" layoutX="85.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox alignment="CENTER" layoutX="60.0" layoutY="519.0" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <JFXButton id="button1" buttonType="RAISED" mnemonicParsing="false" onAction="#quit" text="返回登录" />
+               </children>
+            </HBox>
             </children>
         </Pane>
         <Pane layoutX="330.0" layoutY="18.0" prefHeight="574.0" prefWidth="560.0">
@@ -50,30 +51,26 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <JFXTextField fx:id="textField1" layoutX="9.0" layoutY="14.0"/>
-                                        <JFXTreeTableView id="tree_view_1" fx:id="treeView1" layoutX="20.0"
-                                                          layoutY="68.0" prefHeight="426.0" prefWidth="492.0">
+                                        <JFXTextField fx:id="textField1" layoutX="9.0" layoutY="14.0" />
+                                        <JFXTreeTableView id="tree_view_1" fx:id="treeView1" layoutX="20.0" layoutY="68.0" prefHeight="426.0" prefWidth="492.0">
                                             <columns>
-                                                <JFXTreeTableColumn fx:id="treeColumn11" prefWidth="75.0" text="课程名"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn12" prefWidth="75.0" text="教室"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn13" prefWidth="75.0" text="时间"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn14" prefWidth="75.0" text="教师"/>
+                                                <JFXTreeTableColumn fx:id="treeColumn11" prefWidth="75.0" text="课程名" />
+                                                <JFXTreeTableColumn fx:id="treeColumn12" prefWidth="75.0" text="教室" />
+                                                <JFXTreeTableColumn fx:id="treeColumn13" prefWidth="75.0" text="时间" />
+                                                <JFXTreeTableColumn fx:id="treeColumn14" prefWidth="75.0" text="教师" />
                                             </columns>
                                             <columnResizePolicy>
-                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                             </columnResizePolicy>
                                         </JFXTreeTableView>
-                                        <HBox alignment="CENTER" layoutX="421.0" layoutY="12.0" prefHeight="31.0"
-                                              prefWidth="91.0">
+                                        <HBox alignment="CENTER" layoutX="421.0" layoutY="12.0" prefHeight="31.0" prefWidth="91.0">
                                             <children>
-                                                <JFXButton fx:id="buttonNew1" buttonType="RAISED" onAction="#refresh1"
-                                                           text="刷新"/>
+                                                <JFXButton fx:id="buttonNew1" buttonType="RAISED" onAction="#refresh1" text="刷新" />
                                             </children>
                                         </HBox>
-                                        <HBox alignment="CENTER" layoutX="171.0" layoutY="8.0" prefHeight="40.0"
-                                              prefWidth="72.0">
+                                        <HBox alignment="CENTER" layoutX="171.0" layoutY="8.0" prefHeight="40.0" prefWidth="72.0">
                                             <children>
-                                                <JFXButton buttonType="RAISED" text="搜索"/>
+                                                <JFXButton buttonType="RAISED" text="搜索" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -84,40 +81,35 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <JFXTextField fx:id="textField2" layoutX="14.0" layoutY="14.0"/>
-                                        <JFXTreeTableView id="tree_view_2" fx:id="treeView2" layoutX="14.0"
-                                                          layoutY="59.0" prefHeight="272.0" prefWidth="508.0">
+                                        <JFXTextField fx:id="textField2" layoutX="14.0" layoutY="14.0" />
+                                        <JFXTreeTableView id="tree_view_2" fx:id="treeView2" layoutX="14.0" layoutY="59.0" prefHeight="272.0" prefWidth="508.0">
                                             <columns>
-                                                <JFXTreeTableColumn fx:id="treeColumn21" prefWidth="75.0" text="课程名称"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn22" prefWidth="75.0" text="成绩"/>
+                                                <JFXTreeTableColumn fx:id="treeColumn21" prefWidth="75.0" text="课程名称" />
+                                                <JFXTreeTableColumn fx:id="treeColumn22" prefWidth="75.0" text="成绩" />
                                             </columns>
                                             <columnResizePolicy>
-                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                             </columnResizePolicy>
                                         </JFXTreeTableView>
                                         <Label layoutX="147.0" layoutY="356.0" text="输入具体课程号查看详情">
                                             <font>
-                                                <Font size="22.0"/>
+                                                <Font size="22.0" />
                                             </font>
                                         </Label>
-                                        <JFXTextField fx:id="textField3" layoutX="147.0" layoutY="430.0"/>
-                                        <HBox alignment="CENTER" layoutX="174.0" layoutY="8.0" prefHeight="40.0"
-                                              prefWidth="72.0">
+                                        <JFXTextField fx:id="textField3" layoutX="147.0" layoutY="430.0" />
+                                        <HBox alignment="CENTER" layoutX="174.0" layoutY="8.0" prefHeight="40.0" prefWidth="72.0">
                                             <children>
-                                                <JFXButton buttonType="RAISED" text="搜索"/>
+                                                <JFXButton buttonType="RAISED" text="搜索" />
                                             </children>
                                         </HBox>
-                                        <HBox alignment="CENTER" layoutX="459.0" layoutY="8.0" prefHeight="40.0"
-                                              prefWidth="55.0">
+                                        <HBox alignment="CENTER" layoutX="459.0" layoutY="8.0" prefHeight="40.0" prefWidth="55.0">
                                             <children>
-                                                <JFXButton buttonType="RAISED" onAction="#refresh2" text="刷新"/>
+                                                <JFXButton buttonType="RAISED" onAction="#refresh2" text="刷新" />
                                             </children>
                                         </HBox>
-                                        <HBox alignment="CENTER" layoutX="298.0" layoutY="424.0" prefHeight="40.0"
-                                              prefWidth="56.0">
+                                        <HBox alignment="CENTER" layoutX="298.0" layoutY="424.0" prefHeight="40.0" prefWidth="56.0">
                                             <children>
-                                                <JFXButton fx:id="buttonFor" buttonType="RAISED" onAction="#find"
-                                                           text="查询"/>
+                                                <JFXButton fx:id="buttonFor" buttonType="RAISED" onAction="#find" text="查询" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -128,45 +120,38 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <JFXTreeTableView id="tree_view_3" fx:id="treeView3" layoutX="7.0"
-                                                          layoutY="50.0" prefHeight="317.0" prefWidth="523.0">
+                                        <JFXTreeTableView id="tree_view_3" fx:id="treeView3" layoutX="7.0" layoutY="50.0" prefHeight="317.0" prefWidth="523.0">
                                             <columns>
-                                                <JFXTreeTableColumn fx:id="treeColumn31" prefWidth="75.0" text="课程号"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn32" prefWidth="75.0" text="课程名"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn33" prefWidth="75.0" text="教师"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn34" prefWidth="75.0" text="教室"/>
-                                                <JFXTreeTableColumn fx:id="treeColumn35" prefWidth="75.0" text="时间"/>
+                                                <JFXTreeTableColumn fx:id="treeColumn31" prefWidth="75.0" text="课程号" />
+                                                <JFXTreeTableColumn fx:id="treeColumn32" prefWidth="75.0" text="课程名" />
+                                                <JFXTreeTableColumn fx:id="treeColumn33" prefWidth="75.0" text="教师" />
+                                                <JFXTreeTableColumn fx:id="treeColumn34" prefWidth="75.0" text="教室" />
+                                                <JFXTreeTableColumn fx:id="treeColumn35" prefWidth="75.0" text="时间" />
                                             </columns>
                                             <columnResizePolicy>
-                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                             </columnResizePolicy>
                                         </JFXTreeTableView>
-                                        <JFXTextField fx:id="textField4" layoutX="14.0" layoutY="14.0"/>
-                                        <HBox alignment="CENTER" layoutX="165.0" layoutY="8.0" prefHeight="40.0"
-                                              prefWidth="64.0">
+                                        <JFXTextField fx:id="textField4" layoutX="14.0" layoutY="14.0" />
+                                        <HBox alignment="CENTER" layoutX="165.0" layoutY="8.0" prefHeight="40.0" prefWidth="64.0">
                                             <children>
-                                                <JFXButton buttonType="RAISED" text="搜索"/>
+                                                <JFXButton buttonType="RAISED" text="搜索" />
                                             </children>
                                         </HBox>
-                                        <HBox alignment="CENTER" layoutX="466.0" layoutY="8.0" prefHeight="40.0"
-                                              prefWidth="56.0">
+                                        <HBox alignment="CENTER" layoutX="466.0" layoutY="8.0" prefHeight="40.0" prefWidth="56.0">
                                             <children>
-                                                <JFXButton fx:id="buttonNew3" buttonType="RAISED" onAction="#refresh3"
-                                                           ripplerFill="#093f79" text="刷新"/>
+                                                <JFXButton fx:id="buttonNew3" buttonType="RAISED" onAction="#refresh3" ripplerFill="#093f79" text="刷新" />
                                             </children>
                                         </HBox>
-                                        <Label layoutX="20.0" layoutY="410.0" prefHeight="54.0" prefWidth="219.0"
-                                               text="选择的课程课程号：">
+                                        <Label layoutX="20.0" layoutY="410.0" prefHeight="54.0" prefWidth="219.0" text="选择的课程课程号：">
                                             <font>
-                                                <Font size="24.0"/>
+                                                <Font size="24.0" />
                                             </font>
                                         </Label>
-                                        <JFXTextField fx:id="textField5" layoutX="239.0" layoutY="424.0"/>
-                                        <HBox alignment="CENTER" layoutX="408.0" layoutY="408.0" prefHeight="50.0"
-                                              prefWidth="118.0">
+                                        <JFXTextField fx:id="textField5" layoutX="239.0" layoutY="424.0" />
+                                        <HBox alignment="CENTER" layoutX="408.0" layoutY="408.0" prefHeight="50.0" prefWidth="118.0">
                                             <children>
-                                                <JFXButton fx:id="buttonAdd" mnemonicParsing="false" text="添加"
-                                                           onAction="#addLesson"/>
+                                                <JFXButton fx:id="buttonAdd" mnemonicParsing="false" onAction="#addLesson" text="添加" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -179,6 +164,6 @@
         </Pane>
     </children>
     <stylesheets>
-        <URL value="@/css/student_window.css"/>
+        <URL value="@/css/student_window.css" />
     </stylesheets>
 </AnchorPane>

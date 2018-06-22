@@ -310,6 +310,7 @@ public class OfficerController implements Initializable {
     public void initApproveLesson() {
         ObservableList<ApproveLessonView> data = FXCollections.observableArrayList();
         lessonsNotApprove = lessonService.queryLessonNotApprove();
+
         if (lessonsNotApprove != null && lessonsNotApprove.size() != 0) {
             for (ManageDTO now : lessonsNotApprove) {
                 data.add(new ApproveLessonView(
@@ -318,10 +319,10 @@ public class OfficerController implements Initializable {
                         now.getGradeName().toString())
                 );
             }
-            treeView1.setRoot(new RecursiveTreeItem<>(data, RecursiveTreeObject::getChildren));
-            treeView1.setShowRoot(false);
-            treeView1.setEditable(true);
         }
+        treeView1.setRoot(new RecursiveTreeItem<>(data, RecursiveTreeObject::getChildren));
+        treeView1.setShowRoot(false);
+        treeView1.setEditable(true);
         searchField1.textProperty().addListener(setSearchField1(treeView1));
     }
 
@@ -531,7 +532,7 @@ public class OfficerController implements Initializable {
         dto.setStudentName(name);
         dto.setStudentPwd(password);
         dto.setStudentNumber(number);
-        dto.setStudentGender(gender.equals("1"));
+        dto.setStudentGender(gender.equals("男"));
         dto.setDepartmentId(Long.parseLong(studentDepartmentId));
         dto.setProfessionId(Long.parseLong(studentProfessionId));
         dto.setClassesId(Long.parseLong(studentClassId));

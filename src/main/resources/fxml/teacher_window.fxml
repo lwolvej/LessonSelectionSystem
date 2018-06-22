@@ -22,7 +22,7 @@
     <children>
         <Pane layoutX="14.0" layoutY="14.0" prefHeight="460.0" prefWidth="300.0">
             <children>
-                <ImageView fitHeight="120.0" fitWidth="180.0" layoutX="60.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                <ImageView id="teacher_window_image" fitHeight="120.0" fitWidth="180.0" layoutX="60.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
                 <JFXRippler layoutX="42.0" layoutY="155.0" prefHeight="30.0" prefWidth="70.0">
                     <children>
                         <Label prefHeight="30.0" prefWidth="70.0" text="教师号:" />
@@ -178,10 +178,10 @@
                                                 </JFXButton>
                                             </children>
                                         </HBox>
-                                        <JFXComboBox fx:id="timeComBox" layoutX="294.0" layoutY="37.0" prefHeight="27.0" prefWidth="150.0" />
-                                        <JFXComboBox fx:id="roomComBox" layoutX="294.0" layoutY="137.0" prefHeight="27.0" prefWidth="150.0" />
-                                        <JFXComboBox fx:id="gradeComBox" layoutX="294.0" layoutY="237.0" prefHeight="27.0" prefWidth="150.0" />
-                                        <JFXTextField fx:id="lessonNameField" layoutX="294.0" layoutY="337.0" prefHeight="27.0" prefWidth="150.0" />
+                                        <JFXComboBox fx:id="timeComBox" layoutX="294.0" layoutY="37.0" prefHeight="27.0" prefWidth="208.0" />
+                                        <JFXComboBox fx:id="roomComBox" layoutX="294.0" layoutY="137.0" prefHeight="27.0" prefWidth="214.0" />
+                                        <JFXComboBox fx:id="gradeComBox" layoutX="294.0" layoutY="237.0" prefHeight="27.0" prefWidth="215.0" />
+                                        <JFXTextField fx:id="lessonNameField" layoutX="294.0" layoutY="337.0" prefHeight="27.0" prefWidth="216.0" />
                                     </children>
                                 </AnchorPane>
                             </content>
@@ -198,7 +198,7 @@
                                         <JFXTextField fx:id="lessonDeleteField" layoutX="191.0" layoutY="175.0" prefHeight="27.0" prefWidth="208.0" />
                                         <HBox alignment="CENTER" layoutX="187.0" layoutY="243.0" prefHeight="100.0" prefWidth="200.0">
                                             <children>
-                                                <JFXButton fx:id="deleteLessonButton" text="删除" onAction="#deleteLesson">
+                                                <JFXButton fx:id="deleteLessonButton" onAction="#deleteLesson" text="删除">
                                                     <font>
                                                         <Font size="24.0" />
                                                     </font>
@@ -222,28 +222,28 @@
                                                 </Label>
                                             </children>
                                         </JFXRippler>
-                                        <JFXTextField layoutX="265.0" layoutY="51.0" />
+                                        <JFXTextField fx:id="studentIdNeedToChangeScore" layoutX="265.0" layoutY="51.0" />
                                         <HBox alignment="CENTER" layoutX="420.0" layoutY="44.0" prefHeight="40.0" prefWidth="140.0">
                                             <children>
-                                                <JFXButton text="查询" />
+                                                <JFXButton fx:id="searchStudentButton" onAction="#searchStudent" text="查询" />
                                             </children>
                                         </HBox>
-                                        <JFXListView layoutX="33.0" layoutY="95.0" prefHeight="400.0" prefWidth="291.0" />
+                                        <JFXListView fx:id="studentListView" layoutX="33.0" layoutY="95.0" prefHeight="400.0" prefWidth="291.0" />
                                         <Label layoutX="341.0" layoutY="95.0" text="修改课程的课程号:">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
                                         </Label>
-                                        <JFXTextField layoutX="341.0" layoutY="150.0" prefHeight="27.0" prefWidth="173.0" />
+                                        <JFXTextField fx:id="lessonNeedToChange" layoutX="341.0" layoutY="150.0" prefHeight="27.0" prefWidth="173.0" />
                                         <Label layoutX="341.0" layoutY="257.0" text="修改之后的分数:">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
                                         </Label>
-                                        <JFXTextField layoutX="339.0" layoutY="303.0" prefHeight="27.0" prefWidth="173.0" />
+                                        <JFXTextField fx:id="lessonNumberChange" layoutX="339.0" layoutY="303.0" prefHeight="27.0" prefWidth="173.0" />
                                         <HBox alignment="CENTER" layoutX="341.0" layoutY="395.0" prefHeight="100.0" prefWidth="200.0">
                                             <children>
-                                                <JFXButton text="修改" />
+                                                <JFXButton fx:id="changeLessonButton" onAction="#changeLesson" text="修改" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -274,7 +274,7 @@
                                         <JFXTextField fx:id="studentLessonScore" layoutX="366.0" layoutY="332.0" />
                                         <HBox alignment="CENTER" layoutX="187.0" layoutY="399.0" prefHeight="100.0" prefWidth="200.0">
                                             <children>
-                                                <JFXButton fx:id="addScoreButton" buttonType="RAISED" text="确认" onAction="#addScore">
+                                                <JFXButton fx:id="addScoreButton" buttonType="RAISED" onAction="#addScore" text="确认">
                                                     <font>
                                                         <Font size="25.0" />
                                                     </font>

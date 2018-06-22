@@ -200,8 +200,8 @@
                                 <Label layoutX="234.0" layoutY="333.0" text="所属班级" />
                                 <JFXTextField fx:id="studentNameField" layoutX="352.0" layoutY="18.0" prefHeight="27.0" prefWidth="209.0" />
                                 <JFXTextField fx:id="studentPasswordField" layoutX="352.0" layoutY="65.0" prefHeight="27.0" prefWidth="208.0" />
-                                <JFXRadioButton fx:id="studentGender1" layoutX="352.0" layoutY="121.0" text="男" userData="1" />
-                                <JFXRadioButton fx:id="studentGender2" layoutX="520.0" layoutY="121.0" text="女" userData="2" />
+                                <JFXRadioButton fx:id="studentGender1" layoutX="352.0" layoutY="121.0" text="男" userData="男" />
+                                <JFXRadioButton fx:id="studentGender2" layoutX="520.0" layoutY="121.0" text="女" userData="女" />
                                 <JFXTextField fx:id="studentNumberField" layoutX="352.0" layoutY="152.0" prefHeight="27.0" prefWidth="208.0" />
                                 <JFXComboBox fx:id="studentDepartmentBox" layoutX="352.0" layoutY="193.0" prefHeight="27.0" prefWidth="214.0" />
                                 <JFXComboBox fx:id="studentProfessionBox" layoutX="352.0" layoutY="234.0" prefHeight="27.0" prefWidth="213.0" />
